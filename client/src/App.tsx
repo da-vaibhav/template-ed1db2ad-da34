@@ -6,7 +6,14 @@ import {
 import { BrowserRouter } from "react-router";
 import { TestPage } from './test';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function App() {
 
